@@ -195,3 +195,5 @@ xattr -cr /Applications/KaleidoToolbox.app
 本项目仅供 Kaleido 设备用户使用。
 
 <p align="right">(<a href="#-kaleido-toolbox">返回顶部</a>)</p>
+
+<!-- Last updated: 2026-03-11 16:35 -->
