@@ -1,3 +1,5 @@
+*[Read this in English](#-macos--cp2102-driver-installation-guide) | [中文说明](#-macos--cp2102-驱动安装指南)*
+
 # 🍎 macOS — CP2102 驱动安装指南
 
 适用于 **macOS 12 (Monterey)** 及以上版本
@@ -119,3 +121,127 @@ macOS 大版本更新后可能需要重新安装驱动：
 1. 从官网下载最新版驱动
 2. 重新安装并允许系统扩展
 3. 重启电脑
+
+---
+
+# 🍎 macOS — CP2102 Driver Installation Guide
+
+For **macOS 12 (Monterey)** and later
+
+---
+
+## 💡 You Might Not Need to Install Drivers
+
+Starting from **macOS 10.13 (High Sierra)**, the system has a built-in CP2102 driver. In most cases, it will be automatically recognized when you connect the device.
+
+**Quick Check**: After connecting the device, open Terminal and run:
+
+```bash
+ls /dev/cu.usbserial-*
+```
+
+If you see an output similar to `/dev/cu.usbserial-0001`, your driver is working properly and **no additional installation is required**.
+
+---
+
+## 📥 Step 1: Get Driver (Only if not automatically recognized)
+
+If the system doesn't automatically recognize the device, download the official driver:
+
+- Download `CP210x macOS VCP Driver` from the [Silicon Labs Website](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
+
+---
+
+## ⚙️ Step 2: Install Driver
+
+1. Open the downloaded `.dmg` file.
+2. Double-click `Silicon Labs VCP Driver.pkg`.
+3. Follow the installation wizard prompts.
+
+<!-- <p align="center">
+  <img src="images/mac_installer.png" width="500" alt="macOS Installer Wizard">
+  <br><em>macOS Driver Installation Wizard</em>
+</p> -->
+
+> **⚠️ Security Warning**: During installation, the system might prompt "System Extension Blocked". Please follow the steps below to handle this.
+
+---
+
+## 🔒 Step 3: Allow System Extensions
+
+### macOS 13 (Ventura) and later
+
+1. Go to "System Settings" → "Privacy & Security".
+2. Scroll to the bottom and find the blocked extension prompt.
+3. Click the "Allow" button.
+4. Enter administrator password to confirm.
+5. **Restart your Mac**.
+
+### macOS 12 (Monterey)
+
+1. Go to "System Preferences" → "Security & Privacy" → "General".
+2. Click the "Allow" button at the bottom.
+3. **Restart your Mac**.
+
+<!-- <p align="center">
+  <img src="images/mac_security.png" width="500" alt="Allow System Extensions">
+  <br><em>Allow system extensions in security settings</em>
+</p> -->
+
+---
+
+## ✅ Step 4: Verify Installation
+
+1. Connect the Kaleido device using a USB cable.
+2. Open Terminal and run the following commands:
+
+```bash
+# Check for serial devices
+ls /dev/cu.usbserial-*
+
+# Or check for more detailed info
+system_profiler SPUSBDataType | grep -A 5 "CP210"
+```
+
+1. Confirm that a similar output to the following appears:
+
+```
+/dev/cu.usbserial-0001
+```
+
+Simply select this port in Kaleido Toolbox.
+
+---
+
+## ❓ Troubleshooting
+
+### No usbserial device appears in Terminal
+
+1. Ensure your USB cable is a **data cable** (not a charge-only cable).
+2. Try changing to a different USB port or USB-C adapter.
+3. Check if the USB device is recognized in Terminal:
+
+```bash
+system_profiler SPUSBDataType
+```
+
+If you see a `CP2102` related entry but no serial port `/dev/cu.usbserial-*`, the driver is not correctly loaded. Please reinstall the driver and restart.
+
+### Special Notes for Apple Silicon (M1/M2/M3/M4)
+
+Apple Silicon Macs usually automatically recognize CP2102. If you encounter issues:
+
+1. Make sure you downloaded the latest version of the driver (which natively supports Apple Silicon).
+2. You **must restart your Mac** after installation (not just log out, a full restart).
+3. If it still doesn't work, try lowering the security policy in "Recovery Mode":
+   - Shut down your Mac → Press and hold the power button to boot into Recovery.
+   - Menu bar → "Utilities" → "Startup Security Utility".
+   - Choose "Reduced Security" → Check "Allow user management of kernel extensions from identified developers".
+
+### Driver stops working after macOS upgrade
+
+After major macOS updates, you may need to reinstall the driver:
+
+1. Download the latest driver from the official website.
+2. Reinstall it and allow system extensions.
+3. Restart your Mac.

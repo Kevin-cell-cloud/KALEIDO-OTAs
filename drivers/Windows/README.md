@@ -1,3 +1,5 @@
+*[Read this in English](#-windows--cp2102-driver-installation-guide) | [中文说明](#-windows--cp2102-驱动安装指南)*
+
 # 🪟 Windows — CP2102 驱动安装指南
 
 适用于 **Windows 10 / Windows 11**（64-bit）
@@ -73,3 +75,81 @@
 1. 右键该 COM 端口 → 选择「属性」
 2. 切换到「端口设置」→ 点击「高级」
 3. 手动指定一个固定的 COM 端口号
+
+---
+
+# 🪟 Windows — CP2102 Driver Installation Guide
+
+For **Windows 10 / Windows 11** (64-bit)
+
+---
+
+## 📥 Step 1: Get the Driver
+
+Methods to get the driver (Choose one):
+
+1. Download `CP210x_Windows_Driver.zip` from this repository's **[Release page](../../../releases/latest)**
+2. Download `CP210x Windows Drivers` from the [Silicon Labs Website](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
+
+---
+
+## ⚙️ Step 2: Install the Driver
+
+### Method A: Use Installer (Recommended)
+
+1. Extract the downloaded `CP210x_Windows_Driver.zip`.
+2. Find `CP210xVCPInstaller_x64.exe` (for 64-bit systems).
+3. **Right-click** → Select "Run as administrator".
+4. Follow the prompts to complete the installation.
+
+<!-- Put installation screenshots in images/ -->
+<!-- <p align="center">
+  <img src="images/win_installer.png" width="500" alt="Run Installer">
+  <br><em>Run Installer</em>
+</p> -->
+
+### Method B: Manual Installation (inf method)
+
+1. Extract the driver zip file.
+2. Find the `silabser.inf` file.
+3. **Right-click** → Select "Install".
+4. Wait for the system to prompt successful installation.
+
+---
+
+## ✅ Step 3: Verify Installation
+
+1. Connect the Kaleido device using a USB cable.
+2. Open "Device Manager" (`Win + X` → Device Manager).
+3. Expand the "Ports (COM & LPT)" category.
+4. Confirm the appearance of: **`Silicon Labs CP210x USB to UART Bridge (COMx)`**
+
+<!-- <p align="center">
+  <img src="images/win_device_manager.png" width="500" alt="CP2102 in Device Manager">
+  <br><em>Confirm CP2102 driver loaded successfully in Device Manager</em>
+</p> -->
+
+Remember the **COM port number** displayed here (e.g., `COM3`). Simply select the corresponding port in the Kaleido Toolbox.
+
+---
+
+## ❓ Troubleshooting
+
+### Yellow exclamation mark in Device Manager
+
+1. Right-click the device → Select "Update driver".
+2. Select "Browse my computer for drivers".
+3. Point to the extracted driver folder.
+4. Click "Next" and wait for the installation to complete.
+
+### Device completely missing from Device Manager
+
+- Ensure you are using a **data cable** (not a charge-only cable).
+- Try changing to a different USB port.
+- Restart your computer and try again.
+
+### Port number changes frequently
+
+1. Right-click the COM port → Select "Properties".
+2. Switch to the "Port Settings" tab → Click "Advanced".
+3. Manually specify a fixed COM Port Number.

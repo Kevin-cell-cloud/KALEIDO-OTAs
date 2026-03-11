@@ -1,3 +1,5 @@
+*[Read this in English](#-driver-installation-guide) | [中文说明](#-驱动程序安装指南)*
+
 # 🔌 驱动程序安装指南
 
 Kaleido Toolbox 通过 **CP2102** (Silicon Labs) USB 转串口芯片与设备通信。  
@@ -66,3 +68,74 @@ ls /dev/cu.usbserial-*
 ### macOS 提示"系统扩展已被阻止"？
 
 前往「系统设置」→「隐私与安全性」→ 底部点击「允许」→ 重启电脑
+
+---
+
+# 🔌 Driver Installation Guide
+
+Kaleido Toolbox uses the **CP2102** (Silicon Labs) USB-to-UART bridge controller to communicate with your device.  
+When connecting the device for the first time, you need to install the corresponding driver for your operating system.
+
+---
+
+## 📋 Chip Information
+
+| Item | Description |
+|------|-------------|
+| Chip Model | Silicon Labs CP2102 / CP2102N |
+| Function | USB to UART Serial Communication |
+| Recognition | Shown as `Silicon Labs CP210x USB to UART Bridge` in Device Manager |
+
+---
+
+## 📥 Download Driver
+
+You can get the driver from the following sources:
+
+| Platform | Download Method |
+|----------|-----------------|
+| Windows | [Download from Release](../../releases/latest) or [Silicon Labs Website](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers) |
+| macOS | macOS 10.13+ usually has **built-in drivers**, no installation required; if not recognized, [Download Official Driver](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers) |
+
+---
+
+## 📖 Installation Guide
+
+Please choose the installation guide corresponding to your operating system:
+
+### 🪟 [Windows Installation Guide](Windows/README.md)
+
+For Windows 10 / 11
+
+### 🍎 [macOS Installation Guide](macOS/README.md)
+
+For macOS 12 (Monterey) and above
+
+---
+
+## ❓ FAQ
+
+### How to verify if the driver is installed successfully?
+
+**Windows**: Open "Device Manager" → "Ports (COM & LPT)" → It should display `Silicon Labs CP210x USB to UART Bridge (COMx)`.
+
+**macOS**: Open "Terminal" and run the following command:
+
+```bash
+ls /dev/tty.usbserial-*
+# or
+ls /dev/cu.usbserial-*
+```
+
+If a device like `/dev/tty.usbserial-0001` is displayed, the driver is working properly.
+
+### Driver installed but device still not recognized?
+
+1. Unplug the USB cable, wait for 5 seconds, and plug it back in.
+2. Try a different USB port (prefer straight connection to motherboard, avoid USB hubs).
+3. Try a different USB cable (make sure it's a data cable, not a charge-only cable).
+4. Restart your computer and try again.
+
+### macOS shows "System Extension Blocked"?
+
+Go to "System Settings" → "Privacy & Security" → click "Allow" at the bottom → Restart your computer.
