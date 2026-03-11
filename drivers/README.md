@@ -6,6 +6,8 @@ Kaleido Toolbox 通过 **CP2102** (Silicon Labs) USB 转串口芯片与设备通
 首次连接设备时，需要为您的操作系统安装对应的驱动程序。
 
 > **💡 提示：** 如果你已经使用过 Artisan 并且能够操作你的设备，证明你的电脑已经能够识别设备端口，则**无需**再配置驱动！
+>
+> **💡 蓝牙无线连接（可选）：** 如果你使用了 Intel CPU 的 Mac 电脑或 Windows 电脑，并且不想使用 USB 有线连接 (CP2102 串口)，你可以使用电脑蓝牙链接设备。设备通常的识别名称为 `Roaster_SRSv6`。在系统蓝牙菜单里完成配对后，你可以在工具上找到它的端口（如果链接后显示了两个 COM 端口，只有一个可用，请依次尝试）。
 
 ---
 
@@ -79,6 +81,8 @@ Kaleido Toolbox uses the **CP2102** (Silicon Labs) USB-to-UART bridge controller
 When connecting the device for the first time, you need to install the corresponding driver for your operating system.
 
 > **💡 Note:** If you have used Artisan before and are able to operate your device, it means your computer can already recognize the device port, and you **do not** need to configure the driver again!
+>
+> **💡 Bluetooth Connection (Optional):** If you are using an Intel-based Mac or a Windows PC and prefer a wireless connection over the USB wire (CP2102 serial), you can connect to the device via Bluetooth. The device is usually named `Roaster_SRSv6`. Pair it in your system's Bluetooth menu, and you'll find its port in the tool (if two COM ports appear after connecting, only one is active—try them sequentially).
 
 ---
 
