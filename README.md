@@ -45,7 +45,9 @@ Go to the **[Releases](../../releases/latest)** page to download the latest vers
 
 This tool communicates with the device via a USB-to-Serial chip (CP2102). You need to install the driver for the first use.
 
-👉 **[View Driver Installation Guide](drivers/README.md)**
+> **� Note:** If you have used Artisan before and are able to operate your device, it means your computer can already recognize the device port, and you **do not** need to configure the driver again!
+
+�👉 **[View Driver Installation Guide](drivers/README.md)**
 
 ---
 
@@ -140,6 +142,8 @@ Kaleido 烘豆机系列调试工具集，提供固件升级、串口调试、风
 ### 🔌 驱动安装
 
 本工具通过 USB 转串口芯片（CP2102）与设备通信，首次使用需安装驱动程序。
+
+> **💡 提示：** 如果你已经使用过 Artisan 并且能够操作你的设备，证明你的电脑已经能够识别设备端口，则**无需**再配置驱动！
 
 👉 **[查看驱动安装指南](drivers/README.md)**
 

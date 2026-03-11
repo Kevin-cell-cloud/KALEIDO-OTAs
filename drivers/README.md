@@ -5,6 +5,8 @@
 Kaleido Toolbox 通过 **CP2102** (Silicon Labs) USB 转串口芯片与设备通信。  
 首次连接设备时，需要为您的操作系统安装对应的驱动程序。
 
+> **💡 提示：** 如果你已经使用过 Artisan 并且能够操作你的设备，证明你的电脑已经能够识别设备端口，则**无需**再配置驱动！
+
 ---
 
 ## 📋 芯片信息
@@ -75,6 +77,8 @@ ls /dev/cu.usbserial-*
 
 Kaleido Toolbox uses the **CP2102** (Silicon Labs) USB-to-UART bridge controller to communicate with your device.  
 When connecting the device for the first time, you need to install the corresponding driver for your operating system.
+
+> **💡 Note:** If you have used Artisan before and are able to operate your device, it means your computer can already recognize the device port, and you **do not** need to configure the driver again!
 
 ---
 
