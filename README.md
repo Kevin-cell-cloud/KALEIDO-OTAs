@@ -73,7 +73,7 @@ This tool communicates with the device via a USB-to-Serial chip (CP2102). You ne
 
 1. Download the installation package for your platform from [Releases](../../releases/latest).
 2. Install the [CP2102 Driver](drivers/README.md) (if necessary).
-3. Connect the Kaleido Roaster via a USB cable.
+3. Connect the Kaleido Roaster via a USB cable or Bluetooth.
 4. Open Kaleido Toolbox, select the serial port, Baud rate selection: 57600 and connect.
 
 ---
@@ -173,7 +173,7 @@ Kaleido 烘豆机系列调试工具集，提供固件升级、串口调试、风
 
 1. 从 [Releases](../../releases/latest) 下载对应平台的安装包
 2. 安装 [CP2102 驱动](drivers/README.md)（如需要）
-3. 通过 USB 线连接 Kaleido 烘豆机
+3. 通过 USB 线(或者蓝牙)连接 Kaleido 烘豆机
 4. 打开 Kaleido Toolbox，选择串口，波特率选择：57600，并连接
 
 ---
