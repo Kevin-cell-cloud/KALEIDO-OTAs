@@ -45,9 +45,11 @@ Go to the **[Releases](../../releases/latest)** page to download the latest vers
 
 This tool communicates with the device via a USB-to-Serial chip (CP2102). You need to install the driver for the first use.
 
-> **� Note:** If you have used Artisan before and are able to operate your device, it means your computer can already recognize the device port, and you **do not** need to configure the driver again!
+> **💡 Note:** If you have used Artisan before and are able to operate your device, it means your computer can already recognize the device port, and you **do not** need to configure the driver again!
+>
+> **💡 Bluetooth Connection (Optional):** If you are using an Intel-based Mac or a Windows PC and prefer a wireless connection over the USB wire (CP2102 serial), you can connect to the device via Bluetooth. The device is usually named `Roaster_SRSv6`. Pair it in your system's Bluetooth menu, and you'll find its port in the tool (if two COM ports appear after connecting, only one is active—try them sequentially).
 
-�👉 **[View Driver Installation Guide](drivers/README.md)**
+👉 **[View Driver Installation Guide](drivers/README.md)**
 
 ---
 
