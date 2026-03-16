@@ -1,0 +1,123 @@
+{
+  "config_name": "Standard Fan 12V QC",
+  "test_parameters": {
+    "kp": 0.0170,
+    "ki": 0.1095,
+    "kd": 0.0000,
+    "drive_freq": 10000,
+    "min_rpm": 4000,
+    "max_rpm": 8000,
+    "filter_enabled": 0,
+    "filter_alpha": 80,
+    "refresh_interval_ms": 200,
+    "time_axis_seconds": 60
+  },
+  "test_stages": [
+    {
+      "level_percent": 10,
+      "duration_s": 10,
+      "delay_stats_s": 5
+    },
+    {
+      "level_percent": 50,
+      "duration_s": 15,
+      "delay_stats_s": 5
+    },
+    {
+      "level_percent": 90,
+      "duration_s": 10,
+      "delay_stats_s": 5
+    },
+    {
+      "level_percent": 20,
+      "duration_s": 10,
+      "delay_stats_s": 5
+    }
+  ],
+  "limit_curves": {
+    "upper": [
+      {
+        "time": 0,
+        "rpm": 4300,
+        "enable_fail": true
+      },
+      {
+        "time": 10,
+        "rpm": 4300,
+        "enable_fail": false
+      },
+      {
+        "time": 10.1,
+        "rpm": 5900,
+        "enable_fail": false
+      },
+      {
+        "time": 25,
+        "rpm": 5900,
+        "enable_fail": false
+      },
+      {
+        "time": 25.1,
+        "rpm": 7300,
+        "enable_fail": false
+      },
+      {
+        "time": 35,
+        "rpm": 7300,
+        "enable_fail": false
+      },
+      {
+        "time": 35.1,
+        "rpm": 5500,
+        "enable_fail": false
+      },
+      {
+        "time": 45,
+        "rpm": 5500,
+        "enable_fail": true
+      }
+    ],
+    "lower": [
+      {
+        "time": 0,
+        "rpm": 2900,
+        "enable_fail": true
+      },
+      {
+        "time": 10,
+        "rpm": 2900,
+        "enable_fail": false
+      },
+      {
+        "time": 10.1,
+        "rpm": 4000,
+        "enable_fail": false
+      },
+      {
+        "time": 25,
+        "rpm": 4000,
+        "enable_fail": false
+      },
+      {
+        "time": 25.1,
+        "rpm": 5800,
+        "enable_fail": false
+      },
+      {
+        "time": 35,
+        "rpm": 5800,
+        "enable_fail": false
+      },
+      {
+        "time": 35.1,
+        "rpm": 4000,
+        "enable_fail": false
+      },
+      {
+        "time": 45,
+        "rpm": 4000,
+        "enable_fail": true
+      }
+    ]
+  }
+}
