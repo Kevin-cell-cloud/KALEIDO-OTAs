@@ -21,6 +21,7 @@
 !drivers/**
 
 # ------ 控制协议 ------
+!docs/
 !docs/Serial_Control_Protocol_EN.md
 
 # ------ 排除所有不需要的隐藏/系统文件 ------
