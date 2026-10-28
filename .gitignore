@@ -20,11 +20,8 @@
 !drivers/
 !drivers/**
 
-# ------ Fan QC Tool ------
-!FanQC_Tool/
-!FanQC_Tool/**
-FanQC_Tool/results/
-FanQC_Tool/__pycache__/
+# ------ 控制协议 ------
+!docs/Serial_Control_Protocol_EN.md
 
 # ------ 排除所有不需要的隐藏/系统文件 ------
 .DS_Store
